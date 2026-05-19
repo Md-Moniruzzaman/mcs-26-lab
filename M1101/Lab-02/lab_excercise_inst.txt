@@ -1,0 +1,26 @@
+Exercise 2.1 – Matrix construction
+======================================
+Build the Playfair matrix for the keyword CRYPTOGRAPHY by hand and verify
+your result with build matrix().
+
+Exercise 2.2 – Encryption verification
+======================================
+Encrypt "HIDE THE GOLD IN THE TREE STUMP" using keyword PLAYFAIR
+EXAMPLE and show each digram step.
+
+
+Exercise 2.3 – Digram analysis
+===============================
+Using the digram frequency plot:
+a) What is the most common English digram in your corpus?
+b) Is TH still the most common digram in the ciphertext?
+c) Compute the IC of both plaintext and ciphertext. What do you observe?
+
+
+Lab Deliverables (Submit)
+================================
+1. playfair.py – complete implementation.
+2. playfair digrams.pdf – digram frequency comparison figure.
+
+3. lab2 report.pdf – PT-109 decryption walkthrough and answers to exer-
+cises.

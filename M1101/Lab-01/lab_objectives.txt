@@ -1,0 +1,14 @@
+1. Implement encryption and decryption of the Caesar cipher.
+2. Understand the relationship between shift key, modular arithmetic, and
+letter substitution.
+3. Perform a brute-force attack across all 25 possible keys.
+4. Apply frequency analysis and compute the Index of Coincidence (IC) to
+automatically identify the key.
+5. Quantitatively evaluate the cipher’s security.
+
+===============================output===========================
+Encrypted text: Khoor, Zruog!
+Decrypted text: Hello, World!
+Frequency analysis: {'h': 1, 'e': 1, 'l': 3, 'o': 2, 'w': 1, 'r': 1, 'd': 1}
+Index of coincidence: 0.08888888888888889
+===================================================================

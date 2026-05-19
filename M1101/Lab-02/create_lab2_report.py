@@ -43,19 +43,35 @@ def main():
     pdf.set_auto_page_break(auto=True, margin=20)
     pdf.add_page()
 
-    # Title & Group Members
-    pdf.set_font("helvetica", "B", 13)
+    # Title & Submission Details
+    pdf.ln(5)
+    
+    # Submitted To
+    pdf.set_font("helvetica", "B", 11)
+    pdf.set_text_color(102, 102, 102) # Grey
+    pdf.cell(0, 7, "SUBMITTED TO", new_x="LMARGIN", new_y="NEXT", align="C")
+    pdf.set_font("helvetica", "B", 12)
+    pdf.set_text_color(0, 51, 102) # Navy Blue
+    pdf.cell(0, 7, "Md Shohidul Islam PhD", new_x="LMARGIN", new_y="NEXT", align="C")
+    pdf.ln(4)
+
+    # Submitted By
+    pdf.set_font("helvetica", "B", 11)
+    pdf.set_text_color(102, 102, 102) # Grey
+    pdf.cell(0, 7, "SUBMITTED BY", new_x="LMARGIN", new_y="NEXT", align="C")
+    pdf.set_font("helvetica", "B", 11)
     pdf.set_text_color(0, 0, 0)
-    pdf.cell(0, 10, "Group Members (Group 2):", new_x="LMARGIN", new_y="NEXT", align="C")
+    pdf.cell(0, 7, "Group Members (Group 2):", new_x="LMARGIN", new_y="NEXT", align="C")
+    
     pdf.set_font("helvetica", "", 11)
     members = [
         "1. Lt Col Mamun (ID-007)",
         "2. Lt Col Hasnat (ID-005)",
-        "3. Shaon Mir (ID-026)",
+        "3. Shawon Mir (ID-026)",
         "4. Moniruzzaman (ID-012)"
     ]
     for m in members:
-        pdf.cell(0, 7, m, new_x="LMARGIN", new_y="NEXT", align="C")
+        pdf.cell(0, 6.5, m, new_x="LMARGIN", new_y="NEXT", align="C")
     pdf.ln(8)
 
     # ----------------------------------------------------

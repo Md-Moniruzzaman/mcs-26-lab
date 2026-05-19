@@ -1,7 +1,7 @@
 # Google Colab Step-by-Step Blueprint: Playfair Cipher Lab-02
 **Bangladesh University of Professionals (BUP)**  
 **MCS-26 - M1101 - Lab 02: Playfair Cipher**  
-**Group 2 Members**: Lt Col Mamun (007), Lt Col Hasnat (005), Shaon Mir (026), Moniruzzaman (012)
+**Group 2 Members**: Lt Col Mamun (007), Lt Col Hasnat (005), Shawon Mir (026), Moniruzzaman (012)
 
 This document provides the exact code and markdown cells you need to copy and paste into Google Colab. Create a new notebook in Google Colab, and add the cells sequentially as described below.
 
@@ -14,10 +14,14 @@ Copy and paste this into a **Markdown Cell** at the very top:
 ## MCS-26 - M1101: Cryptography Lab-02
 ### Topic: Complete Implementation & Analysis of the Playfair Cipher
 
+**Submitted to**
+Md Shohidul Islam PhD
+
+**Submitted By**
 **Group Members (Group 2):**
 1. Lt Col Mamun (ID-007)
 2. Lt Col Hasnat (ID-005)
-3. Shaon Mir (ID-026)
+3. Shawon Mir (ID-026)
 4. Moniruzzaman (ID-012)
 ```
 

@@ -11,18 +11,42 @@ This document provides the exact code and markdown cells you need to copy and pa
 Copy and paste this into a **Markdown Cell** at the very top:
 ```markdown
 # Bangladesh University of Professionals (BUP)
-## MCS-26 - M1101: Cryptography Lab-02
-### Topic: Complete Implementation & Analysis of the Playfair Cipher
+## Faculty of Science & Technology (FST)
+### Department of Computer Science and Engineering
 
-**Submitted to**
-Md Shohidul Islam PhD
+**Course Title:** Cryptography  
+**Course Code:** M1101  
 
-**Submitted By**
-**Group Members (Group 2):**
-1. Lt Col Mamun (ID-007)
-2. Lt Col Hasnat (ID-005)
-3. Shawon Mir (ID-026)
-4. Moniruzzaman (ID-012)
+---
+
+# Assignment On
+## Complete Implementation & Analysis of the Playfair Cipher
+
+---
+
+<table style="width: 100%; border: none;">
+  <tr style="border: none;">
+    <td style="width: 50%; vertical-align: top; border: none; padding: 10px;">
+      <h3>Submitted To:</h3>
+      <strong>Md Shohidul Islam PhD</strong><br>
+      Faculty of Science & Technology (FST)<br>
+      Bangladesh University of Professionals (BUP)
+    </td>
+    <td style="width: 50%; vertical-align: top; border: none; padding: 10px;">
+      <h3>Submitted By (Group 2):</h3>
+      <strong>Group Members:</strong><br>
+      1. Lt Col Mamun (ID-007)<br>
+      2. Lt Col Hasnat (ID-005)<br>
+      3. Shawon Mir (ID-026)<br>
+      4. Moniruzzaman (ID-012)<br><br>
+      <strong>Session:</strong> 2025-26
+    </td>
+  </tr>
+</table>
+
+---
+
+**Date of Submission:** 19th May, 2026
 ```
 
 ---

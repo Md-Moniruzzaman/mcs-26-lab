@@ -9,20 +9,24 @@ from playfair import build_matrix, prepare_plaintext, encrypt, decrypt, digram_f
 
 class LAB2_PDF(FPDF):
     def header(self):
+        if self.page_no() == 1:
+            return
         # Header text
-        self.set_font("helvetica", "B", 14)
+        self.set_font("helvetica", "B", 12)
         self.set_text_color(0, 51, 102) # Dark Navy Blue
-        self.cell(0, 10, "MCS-26 - M1101 - LAB 02: PLAYFAIR CIPHER", new_x="LMARGIN", new_y="NEXT", align="C")
+        self.cell(0, 8, "MCS-26 - M1101 - LAB 02: PLAYFAIR CIPHER", new_x="LMARGIN", new_y="NEXT", align="C")
         self.set_text_color(102, 102, 102) # Grey
-        self.set_font("helvetica", "I", 10)
-        self.cell(0, 5, "Bangladesh University of Professionals (BUP)", new_x="LMARGIN", new_y="NEXT", align="C")
-        self.ln(5)
+        self.set_font("helvetica", "I", 9)
+        self.cell(0, 4, "Bangladesh University of Professionals (BUP)", new_x="LMARGIN", new_y="NEXT", align="C")
+        self.ln(3)
         self.set_draw_color(0, 51, 102)
         self.set_line_width(0.5)
         self.line(20, self.get_y(), 190, self.get_y())
         self.ln(5)
 
     def footer(self):
+        if self.page_no() == 1:
+            return
         self.set_y(-15)
         self.set_font("helvetica", "I", 8)
         self.set_text_color(128, 128, 128)
@@ -43,36 +47,82 @@ def main():
     pdf.set_auto_page_break(auto=True, margin=20)
     pdf.add_page()
 
-    # Title & Submission Details
-    pdf.ln(5)
+    # BUP Logo (centered)
+    pdf.image("bup_logo.png", x=85, y=20, w=40)
     
-    # Submitted To
-    pdf.set_font("helvetica", "B", 11)
-    pdf.set_text_color(102, 102, 102) # Grey
-    pdf.cell(0, 7, "SUBMITTED TO", new_x="LMARGIN", new_y="NEXT", align="C")
-    pdf.set_font("helvetica", "B", 12)
-    pdf.set_text_color(0, 51, 102) # Navy Blue
-    pdf.cell(0, 7, "Md Shohidul Islam PhD", new_x="LMARGIN", new_y="NEXT", align="C")
-    pdf.ln(4)
-
-    # Submitted By
-    pdf.set_font("helvetica", "B", 11)
-    pdf.set_text_color(102, 102, 102) # Grey
-    pdf.cell(0, 7, "SUBMITTED BY", new_x="LMARGIN", new_y="NEXT", align="C")
-    pdf.set_font("helvetica", "B", 11)
+    # Institution Info
+    pdf.set_font("helvetica", "B", 14)
     pdf.set_text_color(0, 0, 0)
-    pdf.cell(0, 7, "Group Members (Group 2):", new_x="LMARGIN", new_y="NEXT", align="C")
+    pdf.set_xy(20, 72)
+    pdf.cell(0, 7, "Bangladesh University of Professionals", new_x="LMARGIN", new_y="NEXT", align="C")
     
-    pdf.set_font("helvetica", "", 11)
-    members = [
-        "1. Lt Col Mamun (ID-007)",
-        "2. Lt Col Hasnat (ID-005)",
-        "3. Shawon Mir (ID-026)",
-        "4. Moniruzzaman (ID-012)"
-    ]
-    for m in members:
-        pdf.cell(0, 6.5, m, new_x="LMARGIN", new_y="NEXT", align="C")
+    pdf.set_font("helvetica", "B", 11)
+    pdf.set_text_color(80, 80, 80)
+    pdf.cell(0, 6, "Faculty of Science & Technology (FST)", new_x="LMARGIN", new_y="NEXT", align="C")
+    pdf.cell(0, 6, "Department of Computer Science and Engineering", new_x="LMARGIN", new_y="NEXT", align="C")
+    
+    # Space
     pdf.ln(8)
+    
+    # Course Title & Code
+    pdf.set_font("helvetica", "B", 12)
+    pdf.set_text_color(0, 0, 0)
+    pdf.cell(0, 7, "Course Title: Cryptography", new_x="LMARGIN", new_y="NEXT", align="C")
+    pdf.cell(0, 7, "Course Code: M1101", new_x="LMARGIN", new_y="NEXT", align="C")
+    
+    # Topic Box
+    pdf.ln(12)
+    pdf.set_font("helvetica", "B", 13)
+    pdf.set_text_color(0, 51, 102) # BUP Accent Navy Blue
+    pdf.cell(0, 8, "Assignment On", new_x="LMARGIN", new_y="NEXT", align="C")
+    
+    pdf.set_font("helvetica", "B", 14)
+    pdf.set_text_color(0, 0, 0)
+    pdf.multi_cell(0, 7, "Complete Implementation & Analysis of the Playfair Cipher", new_x="LMARGIN", new_y="NEXT", align="C")
+    
+    # Submission Details (Side-by-Side Left/Right layout exactly like BUP image template)
+    y_start = 175
+    
+    # Submitted To (Left Column)
+    pdf.set_font("helvetica", "B", 10.5)
+    pdf.set_text_color(0, 0, 0)
+    pdf.set_xy(20, y_start)
+    pdf.cell(85, 6, "Submitted to:", align="L")
+    
+    pdf.set_font("helvetica", "", 10.5)
+    pdf.set_xy(20, y_start + 6)
+    pdf.cell(85, 6, "Md Shohidul Islam PhD", align="L")
+    pdf.set_xy(20, y_start + 12)
+    pdf.cell(85, 6, "Faculty of Science & Technology (FST)", align="L")
+    pdf.set_xy(20, y_start + 18)
+    pdf.cell(85, 6, "Bangladesh University of Professionals (BUP)", align="L")
+    
+    # Submitted By (Right Column)
+    pdf.set_font("helvetica", "B", 10.5)
+    pdf.set_xy(110, y_start)
+    pdf.cell(80, 6, "Submitted by:", align="R")
+    
+    pdf.set_font("helvetica", "", 10.5)
+    members = [
+        "Lt Col Mamun (ID-007)",
+        "Lt Col Hasnat (ID-005)",
+        "Shawon Mir (ID-026)",
+        "Moniruzzaman (ID-012)"
+    ]
+    for idx, m in enumerate(members):
+        pdf.set_xy(110, y_start + 6 + idx * 5.5)
+        pdf.cell(80, 5.5, m, align="R")
+    
+    pdf.set_xy(110, y_start + 6 + len(members) * 5.5)
+    pdf.cell(80, 5.5, "Session: 2025-26", align="R")
+    
+    # Date of Submission (Left-aligned at bottom)
+    pdf.set_xy(20, 245)
+    pdf.set_font("helvetica", "B", 10.5)
+    pdf.cell(0, 6, "Date of Submission: 19th May, 2026", align="L")
+    
+    # Add a page break to start actual report on page 2
+    pdf.add_page()
 
     # ----------------------------------------------------
     # EXERCISE 2.1
